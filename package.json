@@ -1,0 +1,19 @@
+{
+  "name": "content-square-takehome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "dev": "nodemon --exec 'ts-node' ./src/index.ts",
+    "clean": "rm -rf build",
+    "build": "npm run-script clean && tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}
