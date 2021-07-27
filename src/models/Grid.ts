@@ -11,4 +11,12 @@ export class Grid {
         this.topEdgeIndex = topEdgeIndex;
         this.lawnMowers = lawnMowers;
     }
+    runLawnMowers() {
+        this.lawnMowers.forEach(lawnMower => {
+            lawnMower.move(this.leftEdgeIndex, this.bottomEdgeIndex, this.rigthEdgeIndex, this.topEdgeIndex);
+        });
+    }
+    printCurrentState() {
+        this.lawnMowers.map(lawnMower => console.log(lawnMower));
+    }
 }
