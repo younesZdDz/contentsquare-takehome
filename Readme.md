@@ -1,3 +1,7 @@
+# Prerequisites
+You need to have installed on your machine:
+* [node](https://nodejs.org/en/) (I used v12.18.4)
+* [npm](https://www.npmjs.com/)
 # How it works
 First of all you need install the dependencies :
 * `npm i` <br>
