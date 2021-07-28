@@ -1,7 +1,7 @@
 import { Grid } from "../models/Grid";
 import { LawnMower } from "../models/LawnMower";
 import * as fs from 'fs';
-import { InstructionType, OrientationType } from "../@types";
+import { GridDataType, InstructionType, OrientationType } from "../@types";
 
 export function getGridFromInputFile(filePath: string): Promise<Grid> {
     return new Promise((resolve, reject) => {
@@ -9,22 +9,21 @@ export function getGridFromInputFile(filePath: string): Promise<Grid> {
             if(err) throw reject(err);
             const arr = data.toString().replace(/\r\n/g,'\n').split('\n');
 
-            const lawnMowers: LawnMower[] = [];
+            const gridData: GridDataType = [];
             for(let i = 1; i < arr.length; i=i+2) {
-                const lawnMowerData = arr[i].split(' ');
+                const lawnMowerState = arr[i].split(' ');
                 const lawnMower = new LawnMower(
-                    parseInt(lawnMowerData[0]),
-                    parseInt(lawnMowerData[1]),
-                    lawnMowerData[2] as OrientationType,
-                    arr[i+1].split('') as InstructionType[]
+                    parseInt(lawnMowerState[0]),
+                    parseInt(lawnMowerState[1]),
+                    lawnMowerState[2] as OrientationType
                 );
-                lawnMowers.push(lawnMower);
+                gridData.push({ lawnMower, instructions: arr[i+1].split('') as InstructionType[]});
             }
-            const gridData = arr[0].split(' ');
+            const gridDimensions = arr[0].split(' ');
             const grid =  new Grid(
-                parseInt(gridData[0]), 
-                parseInt(gridData[1]),
-                lawnMowers
+                parseInt(gridDimensions[0]), 
+                parseInt(gridDimensions[1]),
+                gridData
             );
 
             resolve(grid);

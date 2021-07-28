@@ -2,16 +2,22 @@
   "name": "content-square-takehome",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "start": "node build/index.js",
     "clean": "rm -rf build",
-    "build": "npm run-script clean && tsc"
+    "build": "npm run-script clean && tsc",
+    "test": "mocha -r ts-node/register tests/**.ts --timeout 10000 --exit"
   },
-  "author": "",
+  "author": "ZADI Younes",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/chai-spies": "^1.0.3",
+    "@types/mocha": "^9.0.0",
     "@types/node": "^16.4.3",
+    "chai": "^4.3.4",
+    "chai-spies": "^1.0.0",
+    "mocha": "^9.0.3",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
   }
