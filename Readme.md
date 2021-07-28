@@ -5,7 +5,7 @@ First of all you need install the dependencies :
 Then build the source code:
 * `npm run build` <br>
 
-Than run the code and pass your test data file as an argument, example:
+Then run the code and pass your test data file as an argument, example:
 * `node build/index.js './tests/test-a.txt'` 
 
 If you want to test the program on other data files, put the file in `tests`  folder and pass the path as an argument like the example above.
