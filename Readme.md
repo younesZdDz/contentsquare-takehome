@@ -1,5 +1,8 @@
 # How it works
-First of all you need to build the source code:
+First of all you need install the dependencies :
+* `npm i` <br>
+
+Then build the source code:
 * `npm run build` <br>
 
 Than run the code and pass your test data file as an argument, example:
@@ -38,6 +41,10 @@ Our tests include:
     - Tests if the correct lawn-mowers positions are printed to the console at the end of the simulation 
 * The utils tests:
     - Tests that we read the files correctly
+
+To run the tests :
+* `npm run test` <br>
+
 # Prospects
 * We can  add an optimized algorithm that scans the instructions of a lawn-mower and optimize them before moving it. For example if the instructions has ` LLLL` we can skip these four steps because it returns the same position after.
 * Add visual simulation to help explain the end results
